@@ -17,15 +17,15 @@ class ClientController extends Controller
         //$clients  = DB::table('clients')->where('id',$request->input('id'))->get();
         $client=Client::find($id);
         $client->ref = $request->input('ref');
-        //$clients->email = $request->input('email');
-        //$clients->adress = $request->input('adress');
-        //$clients->postcode = $request->input('postcode');
-        //$clients->city = $request->input('city');
-        //$clients->tva = $request->input('tva');
-        //$clients->country_id = $request->input('country_id');
-        //$clients->phone = $request->input('phone');
-        //$clients->fax = $request->input('fax');
-        //$clients->name = $request->input('name');
+        $client->email = $request->input('email');
+        $client->adress = $request->input('adress');
+        $client->postcode = $request->input('postcode');
+        $client->city = $request->input('city');
+        $client->tva = $request->input('tva');
+        $client->country_id = $request->input('country_id');
+        $client->phone = $request->input('phone');
+        $client->fax = $request->input('fax');
+        $client->name = $request->input('name');
 
            $client->save();
            $response["client"] = $client;
