@@ -23,3 +23,10 @@ Route::put('client/{id}','ClientController@updateClient');
 Route::delete('client/{id}','ClientController@deleteClient');
 Route::get('clients','ClientController@index');
 
+Route::post('commands', 'CommandeController@createCommande');
+Route::put('command/{id}','CommandeController@updateCommande');
+Route::delete('command/{id}','CommandeController@deleteCommande');
+Route::get('commands','CommandeController@index');
+Route::get('commands','CommandeController@generatePDF');
+Route::post('commands','CommandeController@attachmentEMAIL');
+Route::post('commands','CommandeController@createFacture');

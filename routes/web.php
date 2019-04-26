@@ -19,13 +19,7 @@
 
 // Route CommandeController
 
-Route::post('commands', 'CommandeController@createCommande');
-Route::put('commands/{id}','CommandeController@updateCommande');
-Route::delete('commands/{id}','CommandeController@deleteCommande');
-Route::get('commands','CommandeController@index');
-Route::get('commands','CommandeController@generatePDF');
-Route::post('commands','CommandeController@attachmentEMAIL');
-Route::post('commands','CommandeController@createFacture');
+
 
 // Route DevisController
 
