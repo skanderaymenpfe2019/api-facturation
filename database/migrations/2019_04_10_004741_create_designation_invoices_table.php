@@ -15,7 +15,7 @@ class CreateDesignationInvoicesTable extends Migration {
 		Schema::create('designation_invoices', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('invoice_id');
+			$table->string('invoice_id')->references('id')->on('invoice');
 			$table->text('designation', 65535)->nullable();
 			$table->string('unit_price');
 			$table->string('tva');

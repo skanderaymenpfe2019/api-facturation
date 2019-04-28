@@ -30,3 +30,11 @@ Route::get('commands','CommandeController@index');
 Route::get('commands','CommandeController@generatePDF');
 Route::post('commands','CommandeController@attachmentEMAIL');
 Route::post('commands','CommandeController@createFacture');
+
+Route::post('factures','FactureController@createFacture');
+Route::put('facture/{id}','FactureController@updateFacture');
+Route::delete('facture/{id}','FactureController@deleteFacture');
+Route::get('factures','FactureController@idex');
+Route::get('facture','CommandeController@generatePDF');
+Route::post('factures','FactureController@attachmentEMAIL');
+Route::post('factures','FactureController@createNoteCredit');
