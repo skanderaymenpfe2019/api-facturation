@@ -48,11 +48,11 @@ class ClientController extends Controller
            $response["success"] = 1;
         return response()->json($response);
     }
-     public function findClient(){
-        //$client  = Client::find($name);
-        $client  = DB::table('clients')->where('name',$request->input('name'))->get();
-           $response["client"] = $client;
-           $response["success"] = 1;
+     public function findClient($name,REQUEST $request){
+        $client=Client::find($id);
+        //dd($client);
+        $response["client"] = $client;
+        $response["success"] = 1;
         return response()->json($response);
+        }
     }
-}
