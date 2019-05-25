@@ -20,10 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Route Client :
 
-Route::post('clients', 'ClientController@createClient');
+Route::post('client', 'ClientController@createClient');
 Route::put('client/{id}','ClientController@updateClient');
 Route::delete('client/{id}','ClientController@deleteClient');
 Route::get('clients','ClientController@index');
+Route::get('client/{name}','ClientController@findClient');
 
 // Route Commande :
 
@@ -40,7 +41,7 @@ Route::post('commands','CommandeController@createFacture');
 Route::post('factures','FactureController@createFacture');
 Route::put('facture/{id}','FactureController@updateFacture');
 Route::delete('facture/{id}','FactureController@deleteFacture');
-Route::get('factures','FactureController@idex');
+Route::get('factures','FactureController@index');
 Route::get('facture','FactureController@generatePDF');
 Route::post('factures','FactureController@attachmentEMAIL');
 Route::post('facture','FactureController@createNoteCredit');

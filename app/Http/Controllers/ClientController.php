@@ -10,15 +10,18 @@ class ClientController extends Controller
 {
     public function createClient(Request $request)
 	{
-        $clients = Client::create($request->all());
-        return response()->json($clients);
+        $client = Client::create($request->all());
+
+        $response["client"] = $client;
+        $response["success"] = 1;
+        return response()->json($response);
     }
     public function updateClient($id,REQUEST $request){
         //$clients  = DB::table('clients')->where('id',$request->input('id'))->get();
         $client=Client::find($id);
         $client->ref = $request->input('ref');
         $client->email = $request->input('email');
-        $client->adress = $request->input('adress');
+        $client->address = $request->input('address');
         $client->postcode = $request->input('postcode');
         $client->city = $request->input('city');
         $client->tva = $request->input('tva');
@@ -42,6 +45,13 @@ class ClientController extends Controller
     public function index(){
         $clients  = Client::all();
            $response["clients"] = $clients;
+           $response["success"] = 1;
+        return response()->json($response);
+    }
+     public function findClient(){
+        //$client  = Client::find($name);
+        $client  = DB::table('clients')->where('name',$request->input('name'))->get();
+           $response["client"] = $client;
            $response["success"] = 1;
         return response()->json($response);
     }
